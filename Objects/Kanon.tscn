@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Scripts/Kanon.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Kanon.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="Kanon" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 3.75035, 0, 0, 3.99732, 0.196823, 3.10375 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+speed = 500
+drag = 5
+i_up = "ui_up"
+i_left = "ui_left"
+i_down = "ui_down"
+i_right = "ui_right"
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 18.05, 2.7075 )
+transform/scale = Vector2( 0.66, 0.66 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 0.196823, 3.10375 )
+transform/scale = Vector2( 3.75035, 3.99732 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Sprite 2" type="Sprite" parent="."]
+
+
